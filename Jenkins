@@ -1,0 +1,17 @@
+node {
+        stage('Prep')
+        {
+            git branch: 'main', url: 'https://github.com/Ravanan/JenkinsPipeline.git'
+          //checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Ravanan/JenkinsPipeline']])
+        }
+        
+        stage('build')
+        {
+            bat 'mvn clean test'
+        }
+        stage('package')
+        {
+            bat 'mvn package'
+        }
+    
+     }
