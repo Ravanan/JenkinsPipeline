@@ -12,6 +12,7 @@ pipeline {
 		        {
 		         steps{
 		          		  bat "mvn package"
+		          		  archive 'target/*.jar'
 		            }
 		        }
 	        }
